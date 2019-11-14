@@ -1,0 +1,66 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "MEC",
+      "version": "1.0.0",
+      "title": "LEDPI4",
+      "contact": {
+        "email": "agrasagar@gmail.com"
+      },
+      "license": {
+        "name": "MEC",
+        "url": "-"
+      }
+    },
+    "paths": {
+        "/ledpi/{pin}": {
+            "get": {
+                "tags": [
+                  "Swith on LED"
+                ],
+                "summary": "Swith on LED lights in smart city mock",
+                "parameters": [
+                    {
+                    "in": "path",
+                    "name": "pin",
+                    "required": true,
+                    "description": "Pin number on PI4",
+                    "example": "17",
+                    "schema": {
+                            "type": "string",
+                            "nullable": false,
+                            "enum": [17,18,22,23,24,6,12],
+                            "default": "17"
+                        }
+                    },
+                    {
+                    "in": "query",
+                    "name": "state",
+                    "required": false,
+                    "description": "state of the LED",
+                    "example": "ENQUIRE",
+                    "schema": {
+                        "type": "string",
+                        "enum": ["ON", "OFF", "ENQUIRE"],
+                        "default": "enquire"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "512": {
+                        "description": "Failed. Camera not attached to request PI device port."
+                    },
+                    "400": {
+                        "description": "Failed. Bad Request Parameter."
+                    },
+                    "404": {
+                        "description": "Failed. Request not found."
+                    }
+                }
+            }
+        }
+    }
+}        
