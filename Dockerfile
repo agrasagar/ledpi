@@ -7,7 +7,7 @@ RUN cd /usr/docker_ledpi4/
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 RUN pip3 install --no-cache-dir rpi.gpio
-RUN cd /usr/docker_ledpi4/;     git clone https://github.com/agrasagar/ledpi4.git
+RUN cd /usr/docker_ledpi4/;git clone https://github.com/agrasagar/ledpi4.git
 RUN cd /usr/docker_ledpi4/ledpi4
 WORKDIR /usr/docker_ledpi4/ledpi4
 EXPOSE 6994/tcp

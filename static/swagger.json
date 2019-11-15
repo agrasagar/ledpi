@@ -13,7 +13,7 @@
       }
     },
     "paths": {
-        "/ledpi/{pin}": {
+        "/ledpi/{pinId}": {
             "get": {
                 "tags": [
                   "Swith on LED"
@@ -22,9 +22,9 @@
                 "parameters": [
                     {
                     "in": "path",
-                    "name": "pin",
+                    "name": "pinId",
                     "required": true,
-                    "description": "Pin number on PI4",
+                    "description": "Pin Id number on PI4",
                     "example": "17",
                     "schema": {
                             "type": "string",

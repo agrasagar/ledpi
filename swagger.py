@@ -7,7 +7,7 @@ def initialize_swagger(app):
         swagger_url,
         api_url,
         config={
-            'app_name': "campi4"
+            'app_name': "ledpi4"
         }
     )
     app.register_blueprint(blueprint, url_prefix=swagger_url)
